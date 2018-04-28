@@ -11,12 +11,14 @@ int total, current;
 void setup() {
   size(600, 600);
   // numero total de niveles
-  total = 3;
+  total = 5;
   levels = new Graph[total];
   for (int i = 0; i < levels.length; i++)
     levels[0] = new Graph ("puntos1.csv","conexiones1.csv");
     levels[1] = new Graph ("puntos2.csv","conexiones2.csv");
     levels[2]= new Graph ("puntos3.csv","conexiones3.csv");  
+  levels[3]= new Graph ("puntos5.csv","conexiones5.csv"); 
+  levels[4]= new Graph ("puntos4.csv","conexiones4.csv");
     //levels[i]=  new Graph();
 }
 

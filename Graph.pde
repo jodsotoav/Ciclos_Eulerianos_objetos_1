@@ -40,30 +40,41 @@ class Graph {
       float posx = tablaPunto.getFloat(l+1, 0);
       float posy = tablaPunto.getFloat(l+1, 1);
       nodes[l]= new Circle(new PVector(posx, posy), (float)30);
-
-      tablaConexiones= loadTable(file2);
-      //lines = new Line[nodes.length];
-      int c=0;
-      for (int i=0; i<4; i++) {  
-        for (int j=0; j<4; j++) {
-          float a= tablaConexiones.getFloat(i,j);
-          if (a==1) {
-            c++;
-            
-          }
+    }
+    tablaConexiones= loadTable(file2);
+    //lines = new Line[nodes.length];
+    int c=0;
+    for (int i=0; i<tablaConexiones.getRowCount(); i++) {  
+      for (int j=0; j<tablaConexiones.getRowCount(); j++) {
+        float a= tablaConexiones.getFloat(i, j);
+        if (a==1) {
+          c++;
         }
       }
-        lines= new Line[c/2];
-        for (int g = 0; g < lines.length; g++)
-          if (g < lines.length-1)
-        lines[g] = g<5 ?new Line_normal(nodes[g], nodes[g+1]):new Linea_diferente(nodes[g], nodes[g+1]);
-      else
-        lines[g] = new Line_normal(nodes[g], nodes[0]);
-      }
-     
     }
-  
 
+    lines = new Line[c];
+    int x=0;
+    int y=0;
+    int p=-1;
+    for(int i=0;i<tablaConexiones.getRowCount();i++){
+      for(int j=0;j< tablaConexiones.getRowCount();j++){
+        if(tablaConexiones.getFloat(i, j)==1){
+      x=i;
+      y=j;
+      p++;
+      
+    lines[p]= i< 2
+    ? new Line_normal(nodes[x], nodes[y]):new Linea_diferente(nodes[x], nodes[y]);
+      }
+    }
+   
+   
+    }
+    }
+    
+   
+  
 
 
 
@@ -73,8 +84,8 @@ class Graph {
     stroke(255, 255, 0);
     for (int i = 0; i < nodes.length; i++)
       nodes[i].display();
-     for (int i = 0; i < lines.length; i++)
-     lines[i].display();
+    for (int i = 0; i < lines.length; i++)
+      lines[i].display();
     popStyle();
   }
-}
+  }
