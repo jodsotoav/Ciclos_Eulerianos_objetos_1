@@ -22,4 +22,11 @@ class Rectangle extends Node {
   boolean pick(int x, int y) {
     return abs(x-position().x) <= size()/2 && abs(y-position().y) <= size()/2;
   }
+    public Rectangle(PVector p,float s){
+  super(p,s);
+}
+public Rectangle(){
+  super();
+
+}
 }

@@ -39,7 +39,10 @@ class Graph {
     for (int l=0; l< numNodos-1; l++) {
       float posx = tablaPunto.getFloat(l+1, 0);
       float posy = tablaPunto.getFloat(l+1, 1);
-      nodes[l]= new Circle(new PVector(posx, posy), (float)30);
+      PVector position = new PVector(posx,posy);
+      
+      nodes[l]= l<3 ? new Circle(new PVector(posx, posy), (float)30): new Rectangle(new PVector(posx, posy),(float)30);
+      
     }
     tablaConexiones= loadTable(file2);
     //lines = new Line[nodes.length];
