@@ -76,11 +76,6 @@ class Graph {
     }
     }
     
-   
-  
-
-
-
   void display() {
     pushStyle();
     strokeWeight(3);
