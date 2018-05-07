@@ -1,13 +1,12 @@
-/**
- Nodo de forma circular.
- */
+
 
 class Circle extends Node {
   @Override
-  void display() {
+    void display() {
+
     pushStyle();
     strokeWeight(5);
-    stroke(255, 0, 255);
+    stroke(0, 255, 255);
     fill(0, 255, 0);
     if (pick(mouseX, mouseY)) {
       stroke(0, 255, 0);
@@ -18,13 +17,13 @@ class Circle extends Node {
   }
 
   @Override
-  boolean pick(int x, int y) {
+    boolean pick(int x, int y) {
     return sqrt(sq(x-position().x) + sq(y-position().y)) <= size()/2;
   }
-  public Circle(PVector p, Float s){
-  super(p,s);
-}
-public Circle(){
-  super();
-}
+  public Circle(PVector p, Float s) {
+    super(p, s);
+  }
+  public Circle() {
+    super();
+  }
 }

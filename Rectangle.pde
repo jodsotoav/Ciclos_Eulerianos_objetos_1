@@ -8,11 +8,12 @@ class Rectangle extends Node {
     pushStyle();
     rectMode(CENTER);
     strokeWeight(5);
-    stroke(0, 0, 255);
-    fill(255, 255, 0);
+    stroke(0, 255, 255);
+    fill(0, 255, 0);
     if (pick(mouseX, mouseY)) {
       stroke(255, 255, 0);
       fill(0, 0, 255);
+   
     }
     rect(position.x, position.y, size, size);
     popStyle();

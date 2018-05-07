@@ -1,13 +1,4 @@
-/**
- Implementacion basica de la clase linea: dibuja, pero
- el estilo no es personalizable.
- 
- Implemente la personalizacion del estilo en una de dos
- formas (la que mas le suene):
- 1. Mediante atributos adicionales para el estilo (como
- color, tipo de linea, etc); o,
- 2. Mediante herencia (como se hace con la clase Node).
- */
+
 
  abstract class Line {
   // 1. Attributes
